@@ -1,0 +1,12 @@
+C:\Balta\Modelando\Modelando\Modelando.Domain\bin\Debug\net5.0\Modelando.Domain.deps.json
+C:\Balta\Modelando\Modelando\Modelando.Domain\bin\Debug\net5.0\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Domain\bin\Debug\net5.0\ref\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Domain\bin\Debug\net5.0\Modelando.Domain.pdb
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.csproj.AssemblyReference.cache
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.AssemblyInfoInputs.cache
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.AssemblyInfo.cs
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.csproj.CoreCompileInputs.cache
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\ref\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Domain\obj\Debug\net5.0\Modelando.Domain.pdb

@@ -1,0 +1,7 @@
+C:\Balta\Modelando\Modelando\bin\Debug\Modelando.exe.config
+C:\Balta\Modelando\Modelando\bin\Debug\Modelando.exe
+C:\Balta\Modelando\Modelando\bin\Debug\Modelando.pdb
+C:\Balta\Modelando\Modelando\obj\Debug\Modelando.csproj.AssemblyReference.cache
+C:\Balta\Modelando\Modelando\obj\Debug\Modelando.csproj.CoreCompileInputs.cache
+C:\Balta\Modelando\Modelando\obj\Debug\Modelando.exe
+C:\Balta\Modelando\Modelando\obj\Debug\Modelando.pdb
