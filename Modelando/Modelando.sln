@@ -5,11 +5,18 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelando", "Modelando.csproj", "{82707CCA-6505-4D62-86FD-392473374198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelando.Domain", "Modelando.Domain\Modelando.Domain.csproj", "{348863DF-BB5F-42B7-B750-5B0549F1BAC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelando.Domain", "Modelando.Domain\Modelando.Domain.csproj", "{348863DF-BB5F-42B7-B750-5B0549F1BAC6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0447C4A1-37A4-4269-9BDF-42A4FCDB404C} = {0447C4A1-37A4-4269-9BDF-42A4FCDB404C}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelando.Shareds", "Modelando.Shareds\Modelando.Shareds.csproj", "{0447C4A1-37A4-4269-9BDF-42A4FCDB404C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelando.Shareds", "Modelando.Shareds\Modelando.Shareds.csproj", "{0447C4A1-37A4-4269-9BDF-42A4FCDB404C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelando.Tests", "Modelando.Tests\Modelando.Tests.csproj", "{1F656E89-DBDC-4B66-BD0A-C38D898182AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Modelando.Tests", "Modelando.Tests\Modelando.Tests.csproj", "{1F656E89-DBDC-4B66-BD0A-C38D898182AA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0447C4A1-37A4-4269-9BDF-42A4FCDB404C} = {0447C4A1-37A4-4269-9BDF-42A4FCDB404C}
+		{348863DF-BB5F-42B7-B750-5B0549F1BAC6} = {348863DF-BB5F-42B7-B750-5B0549F1BAC6}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
