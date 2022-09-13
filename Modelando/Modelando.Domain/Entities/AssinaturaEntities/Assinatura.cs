@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelando.Domain.Entities
+namespace Modelando.Domain.Entities.AssinaturaEntities
 {
     public class Assinatura
     {

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Modelando.Domain.Entities.AssinaturaEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Modelando.Domain.Entities
+namespace Modelando.Domain.Entities.EstudanteEntities
 {
     public class Estudante
     {
