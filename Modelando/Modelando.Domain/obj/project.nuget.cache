@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ji0zFrVCo4bSe6YGKpkjwhXSvscS6XtXuqVVIV7OLwqe4APWxdGtIt2EZ49NDJJ5KnaHMB0SuctCoBqnqJICLQ==",
+  "dgSpecHash": "HS1JxGjYR5AXd2iURFl/2ONRllvgce+3/SUXnIpy/bNvRuynfZxNXVPrsEaGXelAM2hVTNiINGY4MSOQDSEFHQ==",
   "success": true,
   "projectFilePath": "C:\\Balta\\Modelando\\Modelando\\Modelando.Domain\\Modelando.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ESTÁGIO\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512"
+  ],
   "logs": []
 }

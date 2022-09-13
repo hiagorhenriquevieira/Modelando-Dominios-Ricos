@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "w2M04YF7ROAycu9Nt801Sb/jROKH+pVMaZzIUq/ID+LSFoIb5zlVI8Uyoqgie9TufCPalbv1kvzhh4l+JflYCQ==",
+  "dgSpecHash": "uQrOwa0nyQ0WeOnskLmfNRSRO13yDUQ2sx7TPkSzzZ+m7LF+OEWq5CPE38jX/vBMfl4C8eRuIq0DncZRfvubng==",
   "success": true,
   "projectFilePath": "C:\\Balta\\Modelando\\Modelando\\Modelando.Tests\\Modelando.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ESTÁGIO\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\ESTÁGIO\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512",
     "C:\\Users\\ESTÁGIO\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\ESTÁGIO\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\ESTÁGIO\\.nuget\\packages\\microsoft.net.test.sdk\\16.9.4\\microsoft.net.test.sdk.16.9.4.nupkg.sha512",

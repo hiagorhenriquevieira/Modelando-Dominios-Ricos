@@ -10,13 +10,18 @@ namespace Modelando.Domain.ValueObjects
     public class Nome : ValueObject
 
     {
-        public Nome(int primeiroNome, int sobreNome)
+        public Nome(string primeiroNome, string sobreNome)
         {
             PrimeiroNome = primeiroNome;
             SobreNome = sobreNome;
+
+            if (string.IsNullOrEmpty(PrimeiroNome))
+            {
+                AddNotification("Nome.PrimeiroNome", "Nome inálido");
+            }
         }
 
-        public int PrimeiroNome { get; private set; }
-        public int SobreNome { get; private set; }
+        public string PrimeiroNome { get; private set; }
+        public string SobreNome { get; private set; }
     }
 }

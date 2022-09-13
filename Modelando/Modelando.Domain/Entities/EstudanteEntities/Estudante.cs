@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Flunt.Notifications;
+using Flunt.Validations;
 using System.Threading.Tasks;
 
 namespace Modelando.Domain.Entities.EstudanteEntities
@@ -18,6 +20,8 @@ namespace Modelando.Domain.Entities.EstudanteEntities
             Documento = documento;
             Email = email;
             _assinaturas = new List<Assinatura>();
+
+            AddNotifications(nome, documento, email);
         }
 
         public Nome Nome { get; private set; }

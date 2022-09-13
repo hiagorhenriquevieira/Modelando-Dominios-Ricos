@@ -9,4 +9,3 @@ C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shared
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.dll
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\ref\Modelando.Shareds.dll
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.pdb
-C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.csproj.AssemblyReference.cache

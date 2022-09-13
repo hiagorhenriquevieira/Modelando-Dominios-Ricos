@@ -1,3 +1,4 @@
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\CoverletSourceRootsMapping
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\testhost.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\testhost.exe
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -11,6 +12,7 @@ C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Tests.ru
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Tests.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\ref\Modelando.Tests.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Tests.pdb
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Flunt.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.ObjectModel.dll
@@ -87,6 +89,10 @@ C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\zh-Hans\Microsoft.
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.dll
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.pdb
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.pdb
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.csproj.AssemblyReference.cache
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.GeneratedMSBuildEditorConfig.editorconfig
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.AssemblyInfoInputs.cache
@@ -97,8 +103,3 @@ C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.dl
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\ref\Modelando.Tests.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.pdb
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.genruntimeconfig.cache
-C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\CoverletSourceRootsMapping
-C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.dll
-C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.pdb
-C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.dll
-C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.pdb

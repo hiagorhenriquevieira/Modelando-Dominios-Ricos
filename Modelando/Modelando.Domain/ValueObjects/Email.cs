@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Flunt.Notifications;
+using Flunt.Validations;
 using Modelando.Shareds.ValueObjects;
 
 namespace Modelando.Domain.ValueObjects
@@ -12,7 +14,11 @@ namespace Modelando.Domain.ValueObjects
         public Email(string nomeEmail)
         {
             NomeEmail = nomeEmail;
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsEmail(nomeEmail, "Email.NomeEmail"));
         }
+
 
         public string NomeEmail { get; private set; }
     }
