@@ -2,7 +2,6 @@ C:\Balta\Modelando\Modelando\Modelando.Shareds\bin\Debug\net5.0\Modelando.Shared
 C:\Balta\Modelando\Modelando\Modelando.Shareds\bin\Debug\net5.0\Modelando.Shareds.dll
 C:\Balta\Modelando\Modelando\Modelando.Shareds\bin\Debug\net5.0\ref\Modelando.Shareds.dll
 C:\Balta\Modelando\Modelando\Modelando.Shareds\bin\Debug\net5.0\Modelando.Shareds.pdb
-C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.csproj.AssemblyReference.cache
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.GeneratedMSBuildEditorConfig.editorconfig
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.AssemblyInfoInputs.cache
 C:\Balta\Modelando\Modelando\Modelando.Shareds\obj\Debug\net5.0\Modelando.Shareds.AssemblyInfo.cs

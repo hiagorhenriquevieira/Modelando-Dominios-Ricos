@@ -97,3 +97,8 @@ C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.dl
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\ref\Modelando.Tests.dll
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.pdb
 C:\Balta\Modelando\Modelando\Modelando.Tests\obj\Debug\net5.0\Modelando.Tests.genruntimeconfig.cache
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\CoverletSourceRootsMapping
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.dll
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Domain.pdb
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.dll
+C:\Balta\Modelando\Modelando\Modelando.Tests\bin\Debug\net5.0\Modelando.Shareds.pdb

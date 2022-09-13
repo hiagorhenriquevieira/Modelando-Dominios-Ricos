@@ -6,15 +6,27 @@ using System.Threading.Tasks;
 
 namespace Modelando.Domain.Entities.PagamentoEntities
 {
-    public class Pagamento
+    public abstract class Pagamento
     {
-        public string Numero { get; set; }
-        public DateTime DataPagamento { get; set; }
-        public DateTime DataExpiracao { get; set; }
-        public decimal Total { get; set; }
-        public decimal TotalPago { get; set; }
-        public string Documento { get; set; }
-        public string Proprietario { get; set; }
-        public string Endereco { get; set; }
+        public Pagamento(DateTime dataPagamento, DateTime dataExpiracao, decimal total, decimal totalPago, string documento, string proprietario, string endereco)
+        {
+            Numero = Guid.NewGuid().ToString().Replace("-", "").Substring(0,10).ToUpper();
+            DataPagamento = dataPagamento;
+            DataExpiracao = dataExpiracao;
+            Total = total;
+            TotalPago = totalPago;
+            Documento = documento;
+            Proprietario = proprietario;
+            Endereco = endereco;
+        }
+
+        public string Numero { get; private set; }
+        public DateTime DataPagamento { get; private set; }
+        public DateTime DataExpiracao { get; private set; }
+        public decimal Total { get; private set; }
+        public decimal TotalPago { get; private set; }
+        public string Documento { get; private set; }
+        public string Proprietario { get; private set; }
+        public string Endereco { get; private set; }
     }
 }

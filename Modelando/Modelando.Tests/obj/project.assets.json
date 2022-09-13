@@ -1660,6 +1660,26 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Modelando.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Modelando.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelando.Domain.dll": {}
+        }
+      },
+      "Modelando.Shareds/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Modelando.Shareds.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modelando.Shareds.dll": {}
+        }
       }
     }
   },
@@ -6103,6 +6123,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Modelando.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Modelando.Domain/Modelando.Domain.csproj",
+      "msbuildProject": "../Modelando.Domain/Modelando.Domain.csproj"
+    },
+    "Modelando.Shareds/1.0.0": {
+      "type": "project",
+      "path": "../Modelando.Shareds/Modelando.Shareds.csproj",
+      "msbuildProject": "../Modelando.Shareds/Modelando.Shareds.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6110,6 +6140,8 @@
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
+      "Modelando.Domain >= 1.0.0",
+      "Modelando.Shareds >= 1.0.0",
       "coverlet.collector >= 3.0.2"
     ]
   },
@@ -6144,7 +6176,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Balta\\Modelando\\Modelando\\Modelando.Domain\\Modelando.Domain.csproj": {
+              "projectPath": "C:\\Balta\\Modelando\\Modelando\\Modelando.Domain\\Modelando.Domain.csproj"
+            },
+            "C:\\Balta\\Modelando\\Modelando\\Modelando.Shareds\\Modelando.Shareds.csproj": {
+              "projectPath": "C:\\Balta\\Modelando\\Modelando\\Modelando.Shareds\\Modelando.Shareds.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

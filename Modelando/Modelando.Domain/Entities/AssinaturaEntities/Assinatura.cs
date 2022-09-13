@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelando.Domain.Entities.PagamentoEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,33 @@ namespace Modelando.Domain.Entities.AssinaturaEntities
 {
     public class Assinatura
     {
-        public DateTime DataCriacao { get; set; }
-        public DateTime DataUltimaAtualizacao { get; set; }
-        public DateTime? DataExpiracao { get; set; }
-        public bool Ativa { get; set; }
-        public List<Pagamento> Pagamentos { get; set; }
+        private IList<Pagamento> _pagamento;
+
+        public Assinatura(DateTime? dataExpiracao)
+        {
+            DataCriacao = DateTime.Now;
+            DataUltimaAtualizacao = DateTime.Now;
+            DataExpiracao = dataExpiracao;
+            Ativa = true;
+            _pagamento = new List<Pagamento>();
+        }
+
+        public DateTime DataCriacao { get; private set; }
+        public DateTime DataUltimaAtualizacao { get; private set; }
+        public DateTime? DataExpiracao { get; private set; }
+        public bool Ativa { get; private set; }
+        public IReadOnlyCollection<Pagamento> Pagamentos { get { return _pagamento.ToArray(); } }
+    
+        public void DesativarAssinatura()
+        {
+            Ativa = false;
+            DataUltimaAtualizacao = DateTime.Now;
+        }
+        public void AtivarAssinatura()
+        {
+            Ativa = true;
+            DataUltimaAtualizacao = DateTime.Now;
+        }
+
     }
 }
