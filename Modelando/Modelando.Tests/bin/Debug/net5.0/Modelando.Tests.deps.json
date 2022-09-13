@@ -1079,6 +1079,9 @@
         }
       },
       "Modelando.Domain/1.0.0": {
+        "dependencies": {
+          "Modelando.Shareds": "1.0.0"
+        },
         "runtime": {
           "Modelando.Domain.dll": {}
         }

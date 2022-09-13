@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelando.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Modelando.Domain.Entities.PagamentoEntities
 {
     public abstract class Pagamento
     {
-        public Pagamento(DateTime dataPagamento, DateTime dataExpiracao, decimal total, decimal totalPago, string documento, string proprietario, string endereco)
+        public Pagamento(DateTime dataPagamento, DateTime dataExpiracao, decimal total, decimal totalPago, Documento documento, string proprietario, Endereco endereco)
         {
             Numero = Guid.NewGuid().ToString().Replace("-", "").Substring(0,10).ToUpper();
             DataPagamento = dataPagamento;
@@ -25,8 +26,8 @@ namespace Modelando.Domain.Entities.PagamentoEntities
         public DateTime DataExpiracao { get; private set; }
         public decimal Total { get; private set; }
         public decimal TotalPago { get; private set; }
-        public string Documento { get; private set; }
+        public Documento Documento { get; private set; }
         public string Proprietario { get; private set; }
-        public string Endereco { get; private set; }
+        public Endereco Endereco { get; private set; }
     }
 }

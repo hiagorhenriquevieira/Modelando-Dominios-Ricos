@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelando.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,10 @@ namespace Modelando.Domain.Entities.PagamentoEntities
             DateTime dataPagamento, 
             DateTime dataExpiracao, 
             decimal total, 
-            decimal totalPago, 
-            string documento, 
-            string proprietario, 
-            string endereco) : base(
+            decimal totalPago,
+            Documento documento, 
+            string proprietario,
+            Endereco endereco) : base(
                 dataPagamento,
                 dataExpiracao,
                 total,

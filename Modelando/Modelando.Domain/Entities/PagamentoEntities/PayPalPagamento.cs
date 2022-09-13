@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelando.Domain.ValueObjects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,15 @@ namespace Modelando.Domain.Entities.PagamentoEntities
     public class PayPalPagamento : Pagamento
     {
         public PayPalPagamento(
-            string email, 
+            Email email, 
             string codigoTransacao, 
             DateTime dataPagamento, 
             DateTime dataExpiracao, 
             decimal total, 
-            decimal totalPago, 
-            string documento, 
-            string proprietario, 
-            string endereco) : base(
+            decimal totalPago,
+            Documento documento, 
+            string proprietario,
+            Endereco endereco) : base(
                 dataPagamento,
                 dataExpiracao,
                 total,
@@ -30,7 +31,7 @@ namespace Modelando.Domain.Entities.PagamentoEntities
             CodigoTransacao = codigoTransacao;
         }
 
-        public string Email { get; private set; }
+        public Email Email { get; private set; }
         public string CodigoTransacao { get; private set; }
     }
 }

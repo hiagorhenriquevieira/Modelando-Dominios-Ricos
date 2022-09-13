@@ -1,4 +1,6 @@
 ﻿using Modelando.Domain.Entities.AssinaturaEntities;
+using Modelando.Domain.ValueObjects;
+using Modelando.Shareds.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,23 +9,21 @@ using System.Threading.Tasks;
 
 namespace Modelando.Domain.Entities.EstudanteEntities
 {
-    public class Estudante
+    public class Estudante : Entidade
     {
         private IList<Assinatura> _assinaturas;
-        public Estudante(string primeiroNome, string sobreNome, string documento, string email)
+        public Estudante(Nome nome, Documento documento, Email email)
         {
-            PrimeiroNome = primeiroNome;
-            SobreNome = sobreNome;
+            Nome = nome;
             Documento = documento;
             Email = email;
             _assinaturas = new List<Assinatura>();
         }
 
-        public string PrimeiroNome { get; private set; }
-        public string SobreNome { get; private set; }
-        public string Documento{ get; private set; }
-        public string Email{ get; private set; }
-        public string Endereco { get; private set; }
+        public Nome Nome { get; private set; }
+        public Documento Documento{ get; private set; }
+        public Email Email { get; private set; }
+        public Endereco Endereco { get; private set; }
         public IReadOnlyCollection<Assinatura> Assinaturas { get { return _assinaturas.ToArray(); } }
     
     

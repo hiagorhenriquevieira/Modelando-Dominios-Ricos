@@ -32,7 +32,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Balta\\Modelando\\Modelando\\Modelando.Shareds\\Modelando.Shareds.csproj": {
+                "projectPath": "C:\\Balta\\Modelando\\Modelando\\Modelando.Shareds\\Modelando.Shareds.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
