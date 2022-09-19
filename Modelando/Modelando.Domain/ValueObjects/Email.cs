@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Flunt.Notifications;
+﻿using Flunt.Notifications;
 using Flunt.Validations;
 using Modelando.Shareds.ValueObjects;
 
@@ -16,9 +11,8 @@ namespace Modelando.Domain.ValueObjects
             NomeEmail = nomeEmail;
             AddNotifications(new Contract<Notification>()
                 .Requires()
-                .IsEmail(nomeEmail, "Email.NomeEmail"));
+                .IsEmail(nomeEmail, "Email.NomeEmail", "E-mail inválido."));
         }
-
 
         public string NomeEmail { get; private set; }
     }

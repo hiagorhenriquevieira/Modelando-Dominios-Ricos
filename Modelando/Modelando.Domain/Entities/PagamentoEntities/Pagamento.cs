@@ -1,13 +1,13 @@
-﻿using Modelando.Domain.ValueObjects;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using Modelando.Domain.ValueObjects;
+using Modelando.Shareds.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.Contracts;
 
 namespace Modelando.Domain.Entities.PagamentoEntities
 {
-    public abstract class Pagamento
+    public abstract class Pagamento: Entidade
     {
         public Pagamento(DateTime dataPagamento, DateTime dataExpiracao, decimal total, decimal totalPago, Documento documento, string proprietario, Endereco endereco)
         {
@@ -19,6 +19,13 @@ namespace Modelando.Domain.Entities.PagamentoEntities
             Documento = documento;
             Proprietario = proprietario;
             Endereco = endereco;
+
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsGreaterThan(0, Total, "Pagamento.Total", "O total não pode ser zero")
+                .IsGreaterOrEqualsThan(Total, TotalPago, "Pagamento.TotalPago", "O valor pago é menor que o valor do pagamento")
+                );
+
         }
 
         public string Numero { get; private set; }

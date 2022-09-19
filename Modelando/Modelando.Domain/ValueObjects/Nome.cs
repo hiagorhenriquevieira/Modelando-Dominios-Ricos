@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
 using Modelando.Shareds.ValueObjects;
 
 namespace Modelando.Domain.ValueObjects
@@ -15,10 +12,12 @@ namespace Modelando.Domain.ValueObjects
             PrimeiroNome = primeiroNome;
             SobreNome = sobreNome;
 
-            if (string.IsNullOrEmpty(PrimeiroNome))
-            {
-                AddNotification("Nome.PrimeiroNome", "Nome inálido");
-            }
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsLowerThan(PrimeiroNome,3,"PrimeiroNome.Nome", "Nome deve conter no minimo 3 caracteres")
+                .IsLowerThan(SobreNome,3, "SobreNome.Nome", "Sobrenome deve conter no minimo 3 caracteres")
+                .IsGreaterThan(PrimeiroNome,40, "PrimeiroNome.Nome", "Nome deve conter no máximo 40 caracteres")
+            );
         }
 
         public string PrimeiroNome { get; private set; }

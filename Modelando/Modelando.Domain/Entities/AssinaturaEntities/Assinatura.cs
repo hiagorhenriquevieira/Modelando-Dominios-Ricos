@@ -1,13 +1,14 @@
-﻿using Modelando.Domain.Entities.PagamentoEntities;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using Modelando.Domain.Entities.PagamentoEntities;
+using Modelando.Shareds.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Modelando.Domain.Entities.AssinaturaEntities
 {
-    public class Assinatura
+    public class Assinatura : Entidade
     {
         private IList<Pagamento> _pagamento;
 
@@ -37,5 +38,13 @@ namespace Modelando.Domain.Entities.AssinaturaEntities
             DataUltimaAtualizacao = DateTime.Now;
         }
 
+        public void AdicionarPagamento(Pagamento pagamento)
+        {
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsGreaterThan(DateTime.Now, pagamento.DataPagamento, "Assinatura.Pagamentos", "A data do pagamento deve ser futura.")
+                );
+            _pagamento.Add(pagamento);
+        }
     }
 }

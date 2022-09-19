@@ -1,14 +1,27 @@
-﻿using Modelando.Shareds.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using Modelando.Shareds.ValueObjects;
 
 namespace Modelando.Domain.ValueObjects
 {
     public class Endereco : ValueObject
     {
+        public Endereco(string rua, string numero, string bairro, string cidade, string estado, string pais, string codigoPostal)
+        {
+            Rua = rua;
+            Numero = numero;
+            Bairro = bairro;
+            Cidade = cidade;
+            Estado = estado;
+            Pais = pais;
+            CodigoPostal = codigoPostal;
+
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsLowerThan(Rua, 3, "PrimeiroNome.Nome", "Nome deve conter no minimo 3 caracteres")
+            );
+        }
+
         public string Rua { get; private set; }
         public string Numero { get; private set; }
         public string Bairro { get; private set; }

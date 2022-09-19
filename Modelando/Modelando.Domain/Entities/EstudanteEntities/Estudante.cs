@@ -33,9 +33,24 @@ namespace Modelando.Domain.Entities.EstudanteEntities
     
     public void AdicionarAssinatura(Assinatura assinatura)
         {
-            DesativarTodasAssinaturas();
+            var assinaturaAtiva = false;
+            foreach (var sub in _assinaturas)
+            {
+                if (sub.Ativa)
+                    assinaturaAtiva = true;
+            }
 
-            _assinaturas.Add(assinatura);
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsFalse(assinaturaAtiva, "Estudante.Assinaturas", "Você já tem uma assinatura ativa.")
+                );
+
+            //Pode ser também:
+            //if (assinaturaAtiva)
+            //    AddNotification("Estudante.Assinaturas", "Você já tem uma assinatura ativa.");
+
+            //DesativarTodasAssinaturas();
+            //_assinaturas.Add(assinatura);
         }
 
         private void DesativarTodasAssinaturas()
