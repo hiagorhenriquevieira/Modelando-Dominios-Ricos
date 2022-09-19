@@ -25,8 +25,8 @@ namespace Modelando.Domain.Entities.AssinaturaEntities
         public DateTime DataUltimaAtualizacao { get; private set; }
         public DateTime? DataExpiracao { get; private set; }
         public bool Ativa { get; private set; }
-        public IReadOnlyCollection<Pagamento> Pagamentos { get { return _pagamento.ToArray(); } }
-    
+        public IReadOnlyCollection<Pagamento> Pagamentos => _pagamento.ToArray();
+
         public void DesativarAssinatura()
         {
             Ativa = false;

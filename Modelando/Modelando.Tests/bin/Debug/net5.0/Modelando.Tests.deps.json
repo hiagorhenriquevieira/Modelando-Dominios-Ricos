@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Modelando.Tests/1.0.0": {
         "dependencies": {
+          "Flunt": "2.0.5",
           "MSTest.TestAdapter": "2.2.3",
           "MSTest.TestFramework": "2.2.3",
           "Microsoft.NET.Test.Sdk": "16.9.4",

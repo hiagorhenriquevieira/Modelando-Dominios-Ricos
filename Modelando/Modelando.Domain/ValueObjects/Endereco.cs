@@ -18,7 +18,7 @@ namespace Modelando.Domain.ValueObjects
 
             AddNotifications(new Contract<Notification>()
                 .Requires()
-                .IsLowerThan(Rua, 3, "PrimeiroNome.Nome", "Nome deve conter no minimo 3 caracteres")
+                .IsLowerOrEqualsThan(Rua.Length, 10, "PrimeiroNome.Nome", "Nome deve conter no minimo 3 caracteres")
             );
         }
 

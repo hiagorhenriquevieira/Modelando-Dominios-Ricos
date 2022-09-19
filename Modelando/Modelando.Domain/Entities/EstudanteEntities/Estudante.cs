@@ -1,13 +1,10 @@
-﻿using Modelando.Domain.Entities.AssinaturaEntities;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using Modelando.Domain.Entities.AssinaturaEntities;
 using Modelando.Domain.ValueObjects;
 using Modelando.Shareds.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Flunt.Notifications;
-using Flunt.Validations;
-using System.Threading.Tasks;
 
 namespace Modelando.Domain.Entities.EstudanteEntities
 {
@@ -30,27 +27,28 @@ namespace Modelando.Domain.Entities.EstudanteEntities
         public Endereco Endereco { get; private set; }
         public IReadOnlyCollection<Assinatura> Assinaturas { get { return _assinaturas.ToArray(); } }
     
-    
     public void AdicionarAssinatura(Assinatura assinatura)
         {
-            var assinaturaAtiva = false;
-            foreach (var sub in _assinaturas)
-            {
-                if (sub.Ativa)
-                    assinaturaAtiva = true;
-            }
+            var assinaturaAtiva = ValidarSeExisteAssinaturaAtiva();
 
             AddNotifications(new Contract<Notification>()
                 .Requires()
                 .IsFalse(assinaturaAtiva, "Estudante.Assinaturas", "Você já tem uma assinatura ativa.")
+                .IsLowerOrEqualsThan(0, assinatura.Pagamentos.Count, "Estudante.Asinatura.Pgamentos", "Esta assinatura não possui pagamentos")
                 );
 
-            //Pode ser também:
-            //if (assinaturaAtiva)
-            //    AddNotification("Estudante.Assinaturas", "Você já tem uma assinatura ativa.");
+            if (assinaturaAtiva == false)
+                _assinaturas.Add(assinatura);
+        }
 
-            //DesativarTodasAssinaturas();
-            //_assinaturas.Add(assinatura);
+        public bool ValidarSeExisteAssinaturaAtiva()
+        {
+            foreach (var sub in _assinaturas)
+            {
+                if (sub.Ativa)
+                    return true;
+            }
+            return false;
         }
 
         private void DesativarTodasAssinaturas()
