@@ -8,6 +8,6 @@ namespace Modelando.Shareds.Commands
 {
    public interface ICommand
     {
-
+        void validate();
     }
 }
