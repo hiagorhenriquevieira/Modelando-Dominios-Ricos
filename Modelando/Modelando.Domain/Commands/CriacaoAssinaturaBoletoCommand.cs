@@ -37,7 +37,7 @@ namespace Modelando.Domain.Commands
             AddNotifications(new Contract<Notification>()
                 .Requires()
                 .IsLowerOrEqualsThan(SobreNome, 40, "SobreNome.Nome", "Sobrenome deve conter no máximo 40 caracteres")
-                .IsGreaterOrEqualsThan(PrimeiroNome, 2, "PrimeiroNome.Nome", "Nome deve conter no minímo 3 caracteres")
+                .IsGreaterOrEqualsThan(PrimeiroNome, 3, "PrimeiroNome.Nome", "Nome deve conter no minímo 3 caracteres")
                 .IsLowerOrEqualsThan(PrimeiroNome, 40, "PrimeiroNome.Nome", "Nome deve conter no minímo 40 caracteres")
                 );
 
