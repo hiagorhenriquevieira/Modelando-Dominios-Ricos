@@ -41,19 +41,5 @@ namespace Modelando.Tests.Entities
             Assert.IsTrue(_estudante.ValidarSeExisteAssinaturaAtiva());
 
         }
-        //public void Deve_retornar_sucesso_quando_estudante_nao_tiver_uma_assinatura_ativa()
-        //{
-        //    Assert.Fail();
-        //}
-
-        //[TestMethod]
-        //public void Deve_retornar_um_erro_quando_assinatura_nao_tiver_pagamento()
-        //{
-
-        //    _estudante.AdicionarAssinatura(_assinatura);
-        //    Assert.IsFalse(_estudante.IsValid);
-        //    Assert.Fail();
-
-        //}
     }
 }
