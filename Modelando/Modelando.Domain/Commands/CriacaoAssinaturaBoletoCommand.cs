@@ -40,7 +40,6 @@ namespace Modelando.Domain.Commands
                 .IsGreaterOrEqualsThan(PrimeiroNome, 3, "PrimeiroNome.Nome", "Nome deve conter no minímo 3 caracteres")
                 .IsLowerOrEqualsThan(PrimeiroNome, 40, "PrimeiroNome.Nome", "Nome deve conter no minímo 40 caracteres")
                 );
-
         }
     }
 }
