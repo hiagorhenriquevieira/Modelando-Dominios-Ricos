@@ -16,6 +16,14 @@ namespace Modelando.Domain.Handlers
         private readonly IEstudanteRepository _repository;
         private readonly IEmailService _emailService;
 
+        private Nome _nome;
+        private Endereco _endereco;
+        private Documento _documento;
+        private Email _email;
+        private Estudante _estudante;
+        private Assinatura _assinatura;
+        private BoletoPagamento _boletoPagamento;
+
         public AssinaturaHandler(IEstudanteRepository repository, IEmailService emailService)
         {
             _repository = repository;
@@ -31,45 +39,58 @@ namespace Modelando.Domain.Handlers
                 AddNotifications(command);
                 return new CommandResult(false, "Não foi possível realizar sua assinatura");
             }
+
             //Verificar se documento já está cadastrado
             if (_repository.ExisteDocumento(command.Documento))
-            {
-                AddNotification("Documento", "Esse documento já existe");
-                return new CommandResult(false, "Não foi possível realizar sua assinatura");
-            }
+                return AdicionarNotificacao("Documento", "Esse documento já existe", false, "Não foi possivel realizar assinatura");
+
+
             //Verificar se E-mail já está cadastrado
             if (_repository.ExisteEmail(command.EmailPagador))
-            {
-                AddNotification("EmailPagador", "Esse email já existe");
-                return new CommandResult(false, "Não foi possível realizar sua assinatura");
-            }
-            //Gerar os VOs
-            var nome = new Nome(command.PrimeiroNome, command.SobreNome);
-            var documento = new Documento(command.Documento, Enum.ETipoDocumento.CPF);
-            var email = new Email(command.EmailPagador);
-            var endereco = new Endereco(command.Rua, command.Numero, command.Bairro, command.Cidade, command.Estado, command.Pais, command.CodigoPostal);
+                return AdicionarNotificacao("EmailPagador", "Esse email já existe", false, "Não foi possivel realizar sua assinatura");
 
-            //Gerar as Entidades
-            var estudante = new Estudante(nome, documento, email);
-            var assinatura = new Assinatura(System.DateTime.Now.AddMonths(1));
-            var pagamento = new BoletoPagamento(command.CodigoBarra, email, command.NumeroBoleto, command.DataPagamento, command.DataExpiracao, command.Total, command.TotalPago, documento, command.Proprietario, endereco);
+            AdicionarValueObjects(command);
 
-            //relacionamentos
-            assinatura.AdicionarPagamento(pagamento);
-            estudante.AdicionarAssinatura(assinatura);
+            AdicionarRelacionamento();
 
-            //Agrupar as validações
-            AddNotifications(nome, documento, email, endereco, estudante, assinatura, pagamento);
+            AddNotifications(_nome, _documento, _email, _endereco, _estudante, _assinatura, _boletoPagamento);
 
-            //Salvar as informações
-            _repository.CriarAssinatura(estudante);
+            SalvarInformacoes();
 
-            //Enviar e-mail de boas vindas
-            _emailService.EnviarEmail(estudante.Nome.ToString(), estudante.Email.NomeEmail, "Bem vindo ao Batla.io", "Sua assinatura foi criada.");
-            
+            EnviarEmail();
+
             //Retornar informações
 
             return new CommandResult(true, "Assinatura realizada com sucesso");
+        }
+
+        private void EnviarEmail() 
+            => _emailService.EnviarEmail(_estudante.Nome.ToString(), _estudante.Email.NomeEmail, "Bem vindo ao Batla.io", "Sua assinatura foi criada.");
+
+        private void SalvarInformacoes() 
+            => _repository.CriarAssinatura(_estudante);
+
+        private void AdicionarRelacionamento()
+        {
+            _assinatura.AdicionarPagamento(_boletoPagamento);
+            _estudante.AdicionarAssinatura(_assinatura);
+        }
+
+        private void AdicionarValueObjects(CriacaoAssinaturaBoletoCommand command)
+        {
+            _nome = new Nome(command.PrimeiroNome, command.SobreNome);
+            _documento = new Documento(command.Documento, Enum.ETipoDocumento.CPF);
+            _email = new Email(command.EmailPagador);
+            _endereco = new Endereco(command.Rua, command.Numero, command.Bairro, command.Cidade, command.Estado, command.Pais, command.CodigoPostal);
+            _estudante = new Estudante(_nome, _documento, _email);
+            _assinatura = new Assinatura(System.DateTime.Now.AddMonths(1));
+            _boletoPagamento = new BoletoPagamento(command.CodigoBarra, _email, command.NumeroBoleto, command.DataPagamento, command.DataExpiracao, command.Total, command.TotalPago, _documento, command.Proprietario, _endereco);
+        }
+
+        private ICommandResult AdicionarNotificacao(string propriedade, string mensagemNotificacao, bool sucesso,string mensagemDeFinalizacao)
+        {
+            AddNotification(propriedade, mensagemNotificacao);
+            return new CommandResult(sucesso, mensagemDeFinalizacao);
         }
     }
 }
