@@ -8,6 +8,7 @@ using Modelando.Domain.Services;
 using Modelando.Domain.ValueObjects;
 using Modelando.Shareds.Commands;
 using Modelando.Shareds.Handlers;
+using System;
 
 namespace Modelando.Domain.Handlers
 {
@@ -40,14 +41,11 @@ namespace Modelando.Domain.Handlers
                 return new CommandResult(false, "Não foi possível realizar sua assinatura");
             }
 
-            //Verificar se documento já está cadastrado
-            if (_repository.ExisteDocumento(command.Documento))
-                return AdicionarNotificacao("Documento", "Esse documento já existe", false, "Não foi possivel realizar assinatura");
-
-
-            //Verificar se E-mail já está cadastrado
-            if (_repository.ExisteEmail(command.EmailPagador))
-                return AdicionarNotificacao("EmailPagador", "Esse email já existe", false, "Não foi possivel realizar sua assinatura");
+            string propriedade = ValidarCadastro(command);
+            if (propriedade != "")
+            {
+                return AdicionarNotificacao("Documento", $"Esse {propriedade} já existe", false, "Não foi possivel realizar assinatura");
+            }
 
             AdicionarValueObjects(command);
 
@@ -59,9 +57,18 @@ namespace Modelando.Domain.Handlers
 
             EnviarEmail();
 
-            //Retornar informações
-
             return new CommandResult(true, "Assinatura realizada com sucesso");
+        }
+
+        private string ValidarCadastro(CriacaoAssinaturaBoletoCommand command)
+        {
+            if (_repository.ExisteDocumento(command.Documento))
+                return "documento";
+
+            if (_repository.ExisteEmail(command.EmailPagador))
+                return "email";
+
+            return "";
         }
 
         private void EnviarEmail() 
