@@ -34,10 +34,10 @@ namespace Modelando.Domain.Entities.EstudanteEntities
             AddNotifications(new Contract<Notification>()
                 .Requires()
                 .IsFalse(assinaturaAtiva, "Estudante.Assinaturas", "Você já tem uma assinatura ativa.")
-                .IsLowerOrEqualsThan(0, assinatura.Pagamentos.Count, "Estudante.Asinatura.Pgamentos", "Esta assinatura não possui pagamentos")
+                .IsGreaterThan(0, assinatura.Pagamentos.Count, "Estudante.Asinatura.Pgamentos", "Esta assinatura não possui pagamentos")
                 );
 
-            if (assinaturaAtiva == false)
+            if (!assinaturaAtiva)
                 _assinaturas.Add(assinatura);
         }
 

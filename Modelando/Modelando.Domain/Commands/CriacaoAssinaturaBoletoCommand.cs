@@ -13,14 +13,14 @@ namespace Modelando.Domain.Commands
         public string SobreNome { get; set; }
         public string Documento { get; set; }
         public string NomeEmail { get; set; }
-        public string CodigoBarra { get; private set; }
-        public string NumeroBoleto { get; private set; }
+        public string CodigoBarra { get; set; }
+        public string NumeroBoleto { get; set; }
         public string PagamentoNumero { get; set; }
         public DateTime DataPagamento { get; set; }
         public DateTime DataExpiracao { get; set; }
         public decimal Total { get; set; }
         public decimal TotalPago { get; set; }
-        public Documento DocumentoPagador { get; set; }
+        public string DocumentoPagador { get; set; }
         public ETipoDocumento TipoDocumentoPagador { get; set; }
         public string EmailPagador { get; set; }
         public string Proprietario { get; set; }
